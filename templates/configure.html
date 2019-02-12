@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group col-md-12">
+	            <div class='col-md-4'>
+	                <legend class="border-bottom mb-4">Device Config File</legend>
+	                {%for item in form%}
+	                	<div class="form-group">
+	                    {{ item.label(class="form-control-label") }}
+	                    {% if item.errors %}
+	                        {{ item(class="form-control form-control-sm is-invalid") }}
+	                        <div class="invalid-feedback">
+	                            {% for error in item.errors %}
+	                                <span>{{ error }}</span>
+	                            {% endfor %}
+	                        </div>
+	                    {% else %}
+	                        {{ item(class="form-control form-control-sm") }}
+	                    {% endif %}
+	                	</div>
+	                {%endfor%}
+	            </div>
+               
+	            <div class='col-md-4'>
+	            	<legend class="border-bottom mb-4">Units and Limits</legend>
+	            </div>
+	               
+	            <div class='col-md-4'>
+	             	<legend class="border-bottom mb-4">AWS only</legend>
+	            </div>
+               
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

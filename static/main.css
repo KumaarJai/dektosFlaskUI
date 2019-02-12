@@ -78,3 +78,14 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+a.warning:link{
+	color: red;
+}
+
+a.warning:hover{
+	color: red;
+}
+.col-md-4{
+	float: left !important;
+}
